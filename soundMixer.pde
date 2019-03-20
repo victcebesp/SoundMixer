@@ -41,7 +41,7 @@ void keyPressed() {
 
 void showButtons() {
   pushMatrix();
-  translate(10, 10);
+  translate(50, 10);
   
   pushStyle();
   if(mixer.firstButtonIsPressed()) fill(100, 255, 90);
