@@ -26,20 +26,16 @@ void draw() {
   //play();
 }
 
-void mousePressed() {
-  int x = mouseX;
-  int y = mouseY;
-  
-  if(firstSquarePressed(x, y)) {
+void keyPressed() {
+  if(key == '1') {
     mixer.toggle(0);
-  } else if(secondSquarePressed(x, y)) {
+  } else if (key == '2') {
     mixer.toggle(1);
-  } else if(thirdSquarePressed(x, y)) {
+  } else if (key == '3') {
     mixer.toggle(2);
-  } else if(fourthSquarePressed(x, y)) {
+  } else if (key == '4') {
     mixer.toggle(3);
   }
-  
 }
 
 void showButtons() {
@@ -67,22 +63,6 @@ void showButtons() {
   popStyle();
   
   popMatrix();
-}
-
-boolean firstSquarePressed(int x, int y) {
-  return (x < 100) && (x > 0) && (y < 100) && (y > 0);
-}
-
-boolean secondSquarePressed(int x, int y) {
-  return (x < 200) && (x > 100) && (y < 100) && (y > 0);
-}
-
-boolean thirdSquarePressed(int x, int y) {
-  return (x < 100) && (x > 0) && (y < 200) && (y > 100);
-}
-
-boolean fourthSquarePressed(int x, int y) {
-  return (x < 200) && (x > 100) && (y < 200) && (y > 100);
 }
 
 void updateVolume() {
