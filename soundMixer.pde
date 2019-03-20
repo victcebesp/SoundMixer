@@ -17,7 +17,8 @@ void setup() {
 void draw() {
   
   
-  background(255, 255, 255);
+  background(60, 60, 60);
+  stroke(60, 60, 60);
   
   showButtons(); //<>//
   updateVolume();
@@ -43,22 +44,22 @@ void showButtons() {
   translate(10, 10);
   
   pushStyle();
-  if(mixer.firstButtonIsPressed()) fill(0, 0, 0);
+  if(mixer.firstButtonIsPressed()) fill(100, 255, 90);
   square(0, 0, 100);
   popStyle();
   
   pushStyle();
-  if(mixer.secondButtonIsPressed()) fill(0, 0, 0);
+  if(mixer.secondButtonIsPressed()) fill(255, 143, 65);
   square(100, 0, 100);
   popStyle();
   
   pushStyle();
-  if(mixer.thirdButtonIsPressed()) fill(0, 0, 0);
+  if(mixer.thirdButtonIsPressed()) fill(55, 26, 178);
   square(0, 100, 100);
   popStyle();
 
   pushStyle();
-  if(mixer.fourthButtonIsPressed()) fill(0, 0, 0);
+  if(mixer.fourthButtonIsPressed()) fill(178, 47, 33);
   square(100, 100, 100);
   popStyle();
   
