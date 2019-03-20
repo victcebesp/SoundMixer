@@ -12,6 +12,8 @@ void setup() {
   this.voiceTrack = new SoundFile(this, "clap.wav");
   this.clapTrack = new SoundFile(this, "voice.wav");
   this.mixer = new Mixer(this);
+  volume = 30;
+  this.mixer.updateVolume(volume);
 }
 
 void draw() {
