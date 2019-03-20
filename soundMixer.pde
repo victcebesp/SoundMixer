@@ -4,6 +4,7 @@ boolean firstSquarePlaying, secondSquarePlaying, thirdSquarePlaying, fourthSquar
 Mixer mixer;
 SoundFile bassTrack, jungleTrack, voiceTrack, clapTrack;
 Sound sound;
+int volume;
 
 void setup() {
   size(300, 300);
@@ -45,22 +46,22 @@ void showButtons() {
   translate(50, 10);
   
   pushStyle();
-  if(mixer.firstButtonIsPressed()) fill(100, 255, 90);
+  if(mixer.firstButtonIsPressed()) fill(255, 248, 142);
   square(0, 0, 100);
   popStyle();
   
   pushStyle();
-  if(mixer.secondButtonIsPressed()) fill(255, 143, 65);
+  if(mixer.secondButtonIsPressed()) fill(190, 255, 164);
   square(100, 0, 100);
   popStyle();
   
   pushStyle();
-  if(mixer.thirdButtonIsPressed()) fill(55, 26, 178);
+  if(mixer.thirdButtonIsPressed()) fill(165, 255, 249);
   square(0, 100, 100);
   popStyle();
 
   pushStyle();
-  if(mixer.fourthButtonIsPressed()) fill(178, 47, 33);
+  if(mixer.fourthButtonIsPressed()) fill(171, 199, 255);
   square(100, 100, 100);
   popStyle();
   
@@ -68,7 +69,10 @@ void showButtons() {
 }
 
 void updateVolume() {
-  if(mouseInsideVolumeBar()) this.mixer.updateVolume(mouseX);
+  if(mouseInsideVolumeBar()) {
+    this.mixer.updateVolume(mouseX);
+    volume = mouseX - 10;
+  }
 }
 
 
@@ -79,6 +83,13 @@ boolean mouseInsideVolumeBar() {
 void showVolumeBar() {
   pushMatrix();
   translate(10, 220);
-  rect(0, 0, 280, 70);
+  pushStyle();
+  fill(60, 60, 60);
+  stroke(255, 255, 255);
+  rect(0, 0, 280, 70);  
+  fill(255, 255, 255);
+  text("Drag to change volume", 70, 40);
+  rect(0, 0, volume, 70);
+  popStyle();
   popMatrix();
 }
