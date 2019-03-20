@@ -29,12 +29,6 @@ public class Mixer {
     return buttons;
   }
   
-  public void showMixerButtons() {
-    for(MixerButton button : this.buttons) {
-      button.show();
-    }
-  }
-  
   public boolean firstButtonIsPressed() {
     return this.buttons.get(0).isPressed();
   }

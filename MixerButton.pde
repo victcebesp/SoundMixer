@@ -33,21 +33,4 @@ public class MixerButton extends PApplet {
     return this.isPressed;
   }
   
-  public void show() {
-    //pushStyle();
-    if(this.isPressed) {
-      fill(0, 0, 0);
-    }
-    if(this.id == 0) {
-      square(0, 0, 100);
-    } else if(this.id == 1) {
-      square(100, 0, 100);
-    } else if(this.id == 2) {
-      square(0, 100, 100);
-    } else if(this.id == 3) {
-      square(100, 100, 100);
-    }
-    //popStyle();
-  }
-  
 }

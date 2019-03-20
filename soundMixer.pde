@@ -24,7 +24,6 @@ void draw() {
   updateVolume();
   showVolumeBar();
   this.mixer.play();
-  //play();
 }
 
 void keyPressed() {
