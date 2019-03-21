@@ -26,6 +26,7 @@ void draw() {
   showButtons(); //<>//
   updateVolume();
   showVolumeBar();
+  showButtonsInstructions();
   this.mixer.play();
 }
 
@@ -92,4 +93,14 @@ void showVolumeBar() {
   rect(0, 0, volume, 70);
   popStyle();
   popMatrix();
+}
+
+void showButtonsInstructions() {
+  pushStyle();
+  fill(0, 0, 0);
+  if(!mixer.firstButtonIsPressed()) text("Press 1", 80, 65);
+  if(!mixer.secondButtonIsPressed()) text("Press 2", 180, 65);
+  if(!mixer.thirdButtonIsPressed()) text("Press 3", 80, 165);
+  if(!mixer.fourthButtonIsPressed()) text("Press 4", 180, 165);
+  popStyle();
 }
